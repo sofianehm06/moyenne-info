@@ -10,15 +10,13 @@ Moyenne Info permet de calculer automatiquement sa moyenne semestrielle et annue
 
 <p float="left"> 
 
-<img src = "screenshots/home.jpg" width "200"/>
-<img src = "screenshots/ajout de module.jpg" width "200"/>
-<img src = "screenshots/matières.jpg" width "200"/>
-<img src = "screenshots/module.jpg" width "200"/>
-<img src = "screenshots/paramètres.jpg" width "200"/>
-<img src = "screenshots/semestres.jpg" width "200"/>
-<img src = "screenshots/simulation.jpg" width "200"/>
-
-
+ <img src = "screenshots/home.jpg" width ="200"/>
+ <img src = "screenshots/ajout de module.jpg" width= "200"/>
+ <img src = "screenshots/matières.jpg" width ="200"/>
+ <img src = "screenshots/module.jpg" width ="200"/>
+ <img src = "screenshots/paramètres.jpg" width= "200"/>
+ <img src = "screenshots/semestres.jpg" width ="200"/>
+ <img src = "screenshots/simulation.jpg" width ="200"/>
 </p>
 
 ## ✨ Fonctionnalités
