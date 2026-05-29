@@ -1,16 +1,33 @@
-# moyenne_info
+# 🎓 Moyenne Info — Calculateur de moyenne universitaire
 
-Calculateur de moyenne pour le département informatique
+Application mobile Flutter pour les étudiants du département Informatique .
 
-## Getting Started
+## 📱 Aperçu
 
-This project is a starting point for a Flutter application.
+Moyenne Info permet de calculer automatiquement sa moyenne semestrielle et annuelle en saisissant ses notes de TP, TD et examen final. L'app prend en compte les coefficients, crédits et pondérations CC/Examen de chaque matière.
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Fonctionnalités
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 📊 Calcul de moyenne par matière, UE et semestre
+- 🎯 Mode simulation : note minimale à l'exam pour atteindre un objectif
+- ✏️ Modules personnalisables (coefficient, pondération CC/Examen)
+- ➕ Ajout de modules manquants
+- 🏫 Filières supportées : L1/L2/L3, M1/M2 (GL, IA, ASR), Cycle Ingénieur
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Technologies
+
+- Flutter / Dart
+- Material Design 3
+
+## 🚀 Installation
+
+```bash
+git clone https://github.com/sofianehm06/moyenne-info.git
+cd moyenne-info
+flutter pub get
+flutter run
+```
+
+## 👨‍💻 Auteur
+
+**Sofiane Hammami** — Étudiant en Master Administration & Sécurité des Réseaux, Université de Béjaïa
