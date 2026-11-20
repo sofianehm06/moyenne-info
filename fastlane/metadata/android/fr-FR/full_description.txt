@@ -1,0 +1,12 @@
+Moyenne Info est une application Android conçue pour aider les étudiants en informatique à calculer facilement leurs moyennes universitaires.
+
+Fonctionnalités :
+- Calcul des moyennes des modules
+- Prise en charge des différents niveaux universitaires
+- Calcul selon les coefficients des matières
+- Interface simple et intuitive
+- Conservation des données localement sur l'appareil
+
+L'application fonctionne hors ligne et ne nécessite pas de création de compte.
+
+Aucune publicité ni collecte de données personnelles.
