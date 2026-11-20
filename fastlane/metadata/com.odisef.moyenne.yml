@@ -1,22 +1,18 @@
-
 Categories:
   - Science & Education
 License: MIT
 AuthorName: Sofiane Hammami
-SourceCode: https://github.com/sofianehm06/moyenne-info
-IssueTracker: https://github.com/sofianehm06/moyenne-info/issues
 
 Name: Moyenne Info
-Summary: Calculateur de moyenne pour les étudiants en informatique
+Summary: Calculateur de moyenne pour étudiants en informatique
 Description: |
-  Moyenne Info aide les étudiants en informatique à calculer
-  leurs moyennes universitaires.
+  Moyenne Info permet aux étudiants en informatique
+  de calculer leurs moyennes universitaires.
+  L'application fonctionne hors ligne et conserve
+  les données localement.
 
-  L'application propose le calcul des moyennes des modules
-  en tenant compte des coefficients et des notes.
-
-  Elle fonctionne hors ligne et conserve les données localement.
-  Elle ne contient pas de publicité ni de suivi des utilisateurs.
+SourceCode: https://github.com/sofianehm06/moyenne-info
+IssueTracker: https://github.com/sofianehm06/moyenne-info/issues
 
 RepoType: git
 Repo: https://github.com/sofianehm06/moyenne-info.git
@@ -24,10 +20,25 @@ Repo: https://github.com/sofianehm06/moyenne-info.git
 Builds:
   - versionName: 1.0.7
     versionCode: 7
-    commit: A_REMPLACER_PAR_LE_HASH_COMPLET
-    subdir: .
-    # Recette Flutter à finaliser après vérification
-    # des dépendances et du build F-Droid.
+    commit: cf3cd5bb728782f65434f26e3fc4ab51dca7aa65
+    output: build/app/outputs/flutter-apk/app-release.apk
+    srclibs:
+      - flutter@3.32.8
+    rm:
+      - ios
+      - linux
+      - macos
+      - web
+      - windows
+    prebuild:
+      - export PUB_CACHE=$(pwd)/.pub-cache
+      - $$flutter$$/bin/flutter config --no-analytics
+      - $$flutter$$/bin/flutter pub get
+    scandelete:
+      - .pub-cache
+    build:
+      - export PUB_CACHE=$(pwd)/.pub-cache
+      - $$flutter$$/bin/flutter build apk --release
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
