@@ -18,7 +18,7 @@ RepoType: git
 Repo: https://github.com/sofianehm06/moyenne-info.git
 
 Builds:
-  - versionName: 1.0.7
+  - versionName: '1.0.7'
     versionCode: 7
     commit: cf3cd5bb728782f65434f26e3fc4ab51dca7aa65
     output: build/app/outputs/flutter-apk/app-release.apk
@@ -42,5 +42,5 @@ Builds:
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
-CurrentVersion: 1.0.7
+CurrentVersion: '1.0.7'
 CurrentVersionCode: 7
