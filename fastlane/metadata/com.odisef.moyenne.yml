@@ -1,0 +1,35 @@
+
+Categories:
+  - Science & Education
+License: MIT
+AuthorName: Sofiane Hammami
+SourceCode: https://github.com/sofianehm06/moyenne-info
+IssueTracker: https://github.com/sofianehm06/moyenne-info/issues
+
+Name: Moyenne Info
+Summary: Calculateur de moyenne pour les étudiants en informatique
+Description: |
+  Moyenne Info aide les étudiants en informatique à calculer
+  leurs moyennes universitaires.
+
+  L'application propose le calcul des moyennes des modules
+  en tenant compte des coefficients et des notes.
+
+  Elle fonctionne hors ligne et conserve les données localement.
+  Elle ne contient pas de publicité ni de suivi des utilisateurs.
+
+RepoType: git
+Repo: https://github.com/sofianehm06/moyenne-info.git
+
+Builds:
+  - versionName: 1.0.7
+    versionCode: 7
+    commit: A_REMPLACER_PAR_LE_HASH_COMPLET
+    subdir: .
+    # Recette Flutter à finaliser après vérification
+    # des dépendances et du build F-Droid.
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 1.0.7
+CurrentVersionCode: 7
