@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../data/storage.dart';
 
@@ -12,6 +13,18 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  Future<void> _ouvrir(String url) async {
+    final ok = await launchUrl(
+      Uri.parse(url),
+      mode: LaunchMode.externalApplication,
+    );
+    if (!ok && mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Impossible d\'ouvrir le lien.')),
+      );
+    }
+  }
+
   Future<void> _resetGlobal() async {
     final ok = await showDialog<bool>(
       context: context,
@@ -69,6 +82,43 @@ class _SettingsScreenState extends State<SettingsScreen> {
               'ou ajouter un module manquant : ouvre un semestre puis utilise '
               'l\'icône ✎ sur un module ou le bouton « Ajouter un module ».',
             ),
+          ),
+          const Divider(height: 32),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 8),
+            child: Text('Développeur',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+          ),
+          const ListTile(
+            leading: Icon(Icons.person_outline),
+            title: Text('Sofiane Hammami'),
+            subtitle: Text(
+              'Développeur full-stack · Master ASR, Université de Béjaïa',
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.language),
+            title: const Text('Portfolio'),
+            subtitle: const Text('mon-portfolio-blond-sigma.vercel.app'),
+            onTap: () => _ouvrir('https://mon-portfolio-blond-sigma.vercel.app'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.mail_outline),
+            title: const Text('Email'),
+            subtitle: const Text('sofianehammami06@gmail.com'),
+            onTap: () => _ouvrir('mailto:sofianehammami06@gmail.com'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.work_outline),
+            title: const Text('LinkedIn'),
+            subtitle: const Text('linkedin.com/in/sofianehammami'),
+            onTap: () => _ouvrir('https://linkedin.com/in/sofianehammami'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.code),
+            title: const Text('GitHub'),
+            subtitle: const Text('github.com/sofianehm06'),
+            onTap: () => _ouvrir('https://github.com/sofianehm06'),
           ),
           const Divider(height: 32),
           const Padding(
