@@ -1,17 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../data/curricula.dart';
 import '../data/storage.dart';
 import '../models/cursus.dart';
 import '../services/calcul.dart';
+import '../services/mise_a_jour.dart';
 import '../widgets/note_chip.dart';
 import 'cursus_screen.dart';
 import 'settings_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   final StorageService storage;
 
   const HomeScreen({super.key, required this.storage});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  StorageService get storage => widget.storage;
+
+  @override
+  void initState() {
+    super.initState();
+    _verifierMaj();
+  }
+
+  Future<void> _verifierMaj() async {
+    final maj = await verifierMiseAJour();
+    if (maj == null || !mounted) return;
+
+    final telecharger = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Nouvelle version disponible'),
+        content: Text(
+            'La version ${maj.version} de Moyenne Info est disponible. '
+            'Télécharge-la pour profiter des nouveautés.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Plus tard'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('Télécharger'),
+          ),
+        ],
+      ),
+    );
+
+    if (telecharger == true) {
+      await launchUrl(Uri.parse(maj.url),
+          mode: LaunchMode.externalApplication);
+    }
+  }
 
   Map<TypeCursus, List<Cursus>> _grouper() {
     final m = <TypeCursus, List<Cursus>>{};
